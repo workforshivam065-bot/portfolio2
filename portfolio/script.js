@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!typingElement) return;
 
     const currentRole = roles[roleIndex];
-    
+
     if (isDeleting) {
       // Deleting characters
       typingElement.textContent = currentRole.substring(0, charIndex - 1);
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setTimeout(typeEffect, typingSpeed);
   }
-  
+
   // Start the typing loop
   setTimeout(typeEffect, 1000);
 
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('active');
-        
+
         // Trigger skill progress animations inside the revealed skills category
         if (entry.target.classList.contains('skills-category')) {
           const bars = entry.target.querySelectorAll('.progress-bar-fill');
@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
             bar.style.width = targetWidth;
           });
         }
-        
+
         observer.unobserve(entry.target); // Stop observing once revealed
       }
     });
@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (isFormValid) {
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalBtnText = submitBtn.innerHTML;
-        
+
         // Visual submit state feedback
         submitBtn.disabled = true;
         submitBtn.innerHTML = 'Sending Message...';
